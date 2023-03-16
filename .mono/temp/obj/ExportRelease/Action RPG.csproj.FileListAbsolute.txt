@@ -1,0 +1,9 @@
+H:\C#-&-Godot\Action RPG\.mono\temp\bin\ExportRelease\Action RPG.dll
+H:\C#-&-Godot\Action RPG\.mono\temp\bin\ExportRelease\Action RPG.pdb
+H:\C#-&-Godot\Action RPG\.mono\temp\obj\ExportRelease\Action RPG.csproj.AssemblyReference.cache
+H:\C#-&-Godot\Action RPG\.mono\temp\obj\ExportRelease\Action RPG.GeneratedMSBuildEditorConfig.editorconfig
+H:\C#-&-Godot\Action RPG\.mono\temp\obj\ExportRelease\Action RPG.AssemblyInfoInputs.cache
+H:\C#-&-Godot\Action RPG\.mono\temp\obj\ExportRelease\Action RPG.AssemblyInfo.cs
+H:\C#-&-Godot\Action RPG\.mono\temp\obj\ExportRelease\Action RPG.csproj.CoreCompileInputs.cache
+H:\C#-&-Godot\Action RPG\.mono\temp\obj\ExportRelease\Action RPG.dll
+H:\C#-&-Godot\Action RPG\.mono\temp\obj\ExportRelease\Action RPG.pdb

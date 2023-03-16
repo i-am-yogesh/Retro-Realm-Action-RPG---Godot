@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/Winter Theme/BigTreeSprite.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 12.7151
+height = 20.5572
+
+[node name="BigTree" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -26, -43 )
+scale = Vector2( 0.552083, 0.564706 )
+texture = ExtResource( 1 )
+centered = false
+region_rect = Rect2( 80, 64, 64, 48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 15 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -4.76837e-07, 5 )
+rotation = 1.59424
+shape = SubResource( 2 )
