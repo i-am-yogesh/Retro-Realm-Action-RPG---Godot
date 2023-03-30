@@ -20,6 +20,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
+visible = false
 position = Vector2( 8, 8 )
 shape = SubResource( 1 )
 

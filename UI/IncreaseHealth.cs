@@ -9,4 +9,10 @@ public class IncreaseHealth : Area2D
         EmitSignal("IncreasePlayerHealth");
         QueueFree();
     }
+
+    public override void _Ready(){
+        GetNode<AnimationPlayer>("AnimationPlayer").Play("popout");
+        var player = GetTree().Root.FindNode("Player", true, false);
+        Connect("IncreasePlayerHealth", player, "_on_IncreaseHealth_IncreasePlayerHealth");
+    }
 }

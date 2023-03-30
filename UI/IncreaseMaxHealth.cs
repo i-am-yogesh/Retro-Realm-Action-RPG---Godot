@@ -12,7 +12,7 @@ public class IncreaseMaxHealth : Area2D
 
     public override void _Ready()
     {
-        var player = GetTree().Root.GetNode<Player>("world/YSort/Player");
+        var player = GetTree().Root.FindNode("Player", true, false);
         GetNode<AnimationPlayer>("AnimationPlayer").Play("popout");
         Connect("IncreasePlayerMaxHealth", player, "_on_IncreaseMaxHealth_IncreasePlayerMaxHealth");
     }

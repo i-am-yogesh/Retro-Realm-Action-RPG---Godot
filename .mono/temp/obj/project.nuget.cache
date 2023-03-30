@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nRPQa49ZU5Tu5l9Ved3laS/kkVH/fTnWa91gDyu6zg0sU4ezRUanNQEQ9eUmreA+0Sk9tpv15/4PFN2QuWeIaQ==",
+  "dgSpecHash": "DNTBHpQ6JzLKt4urYJxoOa26UsNgrlRW/pCbq+KZsREhiD2VScyek3BwjMr9p83duYgMpmbZ87F3sxKK+saWRg==",
   "success": true,
-  "projectFilePath": "H:\\C#-&-Godot\\Action RPG\\Action RPG.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "I:\\C#-&-Godot\\Action RPG\\Action RPG.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

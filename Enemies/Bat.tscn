@@ -61,7 +61,7 @@ script = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
 animation = "fly"
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( 0, -12 )
 
@@ -69,10 +69,10 @@ offset = Vector2( 0, -12 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 7 )
 
 [node name="HurtBox" parent="." instance=ExtResource( 3 )]
-visible = false
 collision_layer = 8
 collision_mask = 0
 
@@ -100,8 +100,10 @@ position = Vector2( 0, -15 )
 shape = SubResource( 10 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
+visible = false
 shape = SubResource( 11 )
 
 [node name="WanderController" parent="." instance=ExtResource( 9 )]

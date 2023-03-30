@@ -6,8 +6,8 @@ public class Chest : Sprite
     bool playerInside = false;
     bool chestOpened = false;
 
-    PackedScene dropItem;
-    Tween tween;
+    PackedScene increaseHealth;
+    PackedScene increaseMaxHealth;
     void _on_Area2D_body_entered(Node body){
         playerInside = true;
     }
@@ -18,8 +18,8 @@ public class Chest : Sprite
 
     public override void _Ready()
     {
-        dropItem = (PackedScene)ResourceLoader.Load("res://UI/IncreaseMaxHealth.tscn");
-        tween = GetNode<Tween>("Tween");
+        increaseHealth = (PackedScene)ResourceLoader.Load("res://UI/IncreaseHealth.tscn");
+        increaseMaxHealth = (PackedScene)ResourceLoader.Load("res://UI/IncreaseMaxHealth.tscn");
     }
 
     public override void _Input(InputEvent @event)
@@ -31,8 +31,15 @@ public class Chest : Sprite
     }
 
     public void dropObject(){
-        var dropItemInstance = (Area2D)dropItem.Instance();
-        GetParent().GetNode("Objects").AddChild(dropItemInstance);
-        dropItemInstance.Position = Position;
+        var increaseHealthInstance = (Area2D)increaseHealth.Instance();
+        GetParent().GetNode("Objects").AddChild(increaseHealthInstance);
+
+        var increaseMaxHealthInstance = (Area2D)increaseMaxHealth.Instance();
+        GetParent().GetNode("Objects").AddChild(increaseMaxHealthInstance);
+
+        Vector2 dropPosition = GlobalPosition;
+
+        increaseHealthInstance.GlobalPosition = new Vector2(dropPosition.x+12 , dropPosition.y+10);
+        increaseMaxHealthInstance.GlobalPosition = new Vector2(dropPosition.x-12 , dropPosition.y+10);
     }
 }

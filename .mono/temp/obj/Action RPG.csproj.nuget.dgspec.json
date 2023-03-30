@@ -1,31 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "H:\\C#-&-Godot\\Action RPG\\Action RPG.csproj": {}
+    "I:\\C#-&-Godot\\Action RPG\\Action RPG.csproj": {}
   },
   "projects": {
-    "H:\\C#-&-Godot\\Action RPG\\Action RPG.csproj": {
+    "I:\\C#-&-Godot\\Action RPG\\Action RPG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\C#-&-Godot\\Action RPG\\Action RPG.csproj",
+        "projectUniqueName": "I:\\C#-&-Godot\\Action RPG\\Action RPG.csproj",
         "projectName": "Action RPG",
-        "projectPath": "H:\\C#-&-Godot\\Action RPG\\Action RPG.csproj",
+        "projectPath": "I:\\C#-&-Godot\\Action RPG\\Action RPG.csproj",
         "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-        "outputPath": "H:\\C#-&-Godot\\Action RPG\\.mono\\temp\\obj\\",
+        "outputPath": "I:\\C#-&-Godot\\Action RPG\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Users\\pc\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,7 +41,15 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

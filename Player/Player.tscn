@@ -805,10 +805,14 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
+collision_mask = 129
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
 
 [node name="ShadowSprite" type="Sprite" parent="."]
 position = Vector2( 0, 3 )
@@ -822,6 +826,7 @@ hframes = 60
 frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = -1.5708
 shape = SubResource( 1 )
 
@@ -848,15 +853,15 @@ anims/RunUp = SubResource( 10 )
 tree_root = SubResource( 23 )
 anim_player = NodePath("../AnimationPlayer")
 parameters/playback = SubResource( 24 )
-parameters/Attack/blend_position = Vector2( 0, 1 )
-parameters/Idle/blend_position = Vector2( 0, 1 )
-parameters/Roll/blend_position = Vector2( 0, 1 )
-parameters/Run/blend_position = Vector2( 0, 1 )
+parameters/Attack/blend_position = Vector2( 1, 1 )
+parameters/Idle/blend_position = Vector2( 1, 1 )
+parameters/Roll/blend_position = Vector2( 1, 1 )
+parameters/Run/blend_position = Vector2( 1, 1 )
 
 [node name="HitboxPivot" type="Position2D" parent="."]
 visible = false
 position = Vector2( 0, -4 )
-rotation = 3.14159
+rotation = 1.5708
 
 [node name="SwordHitbox" parent="HitboxPivot" instance=ExtResource( 3 )]
 position = Vector2( 15, 0 )
@@ -884,6 +889,7 @@ anims/RESET = SubResource( 50 )
 anims/Start = SubResource( 51 )
 anims/Stop = SubResource( 52 )
 
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
 [connection signal="invincibleEnded" from="HurtBox" to="." method="_on_HurtBox_invincibleEnded"]
 [connection signal="invinciblilityStarted" from="HurtBox" to="." method="_on_HurtBox_invinciblilityStarted"]

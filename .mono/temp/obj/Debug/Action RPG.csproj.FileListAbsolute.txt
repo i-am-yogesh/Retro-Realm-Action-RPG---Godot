@@ -7,3 +7,12 @@ H:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.AssemblyInfo.cs
 H:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.csproj.CoreCompileInputs.cache
 H:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.dll
 H:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.pdb
+I:\C#-&-Godot\Action RPG\.mono\temp\bin\Debug\Action RPG.dll
+I:\C#-&-Godot\Action RPG\.mono\temp\bin\Debug\Action RPG.pdb
+I:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.csproj.AssemblyReference.cache
+I:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.GeneratedMSBuildEditorConfig.editorconfig
+I:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.AssemblyInfoInputs.cache
+I:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.AssemblyInfo.cs
+I:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.csproj.CoreCompileInputs.cache
+I:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.dll
+I:\C#-&-Godot\Action RPG\.mono\temp\obj\Debug\Action RPG.pdb
