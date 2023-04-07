@@ -99,7 +99,7 @@ public class Ocunid : KinematicBody2D
         var player = (KinematicBody2D)playerDetectionZone.Player;
         if(player != null){
             var direction = GlobalPosition.DirectionTo(player.GlobalPosition);
-           velocity = velocity.MoveToward(direction * MAX_SPEED * 4, ACCELERATION);
+           velocity = velocity.MoveToward(direction * MAX_SPEED * 6, ACCELERATION * 10);
         }
     }
 
@@ -127,7 +127,7 @@ public class Ocunid : KinematicBody2D
 
     void _on_HurtBox_area_entered(Area2D area)
     {
-        knockback = SwordHitBox.knockback_vector * 130;
+        knockback = SwordHitBox.knockback_vector * 70;
         stats.set_health -= (int)area.Get("damage");
         hurtBox.create_hit_effect();
         state = Movement.ATTACK;

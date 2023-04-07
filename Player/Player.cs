@@ -11,10 +11,11 @@ public class Player : KinematicBody2D
     const int MAX_SPEED = 80;
     const int FRICTION = 500;
     const int ROLL_SPEED = 125;
-    bool playerDead = false;
+    bool levelCompeleted = false;
     bool allowUserControl = true;
     Vector2 velocity = Vector2.Zero;
     Vector2 roll_vector = Vector2.Down;
+    Vector2 respawnPosition;
 
     enum Movement
     {
@@ -33,8 +34,11 @@ public class Player : KinematicBody2D
 
     public void remove()
     {
-        playerDead = true;
-        this.QueueFree();
+        Hide();
+        Position = respawnPosition;
+        int health = (int)stats.Get("health");
+        stats.Set("set_health", (health + 2));
+        Show();
     }
 
     public override void _Ready()
@@ -45,11 +49,14 @@ public class Player : KinematicBody2D
         animationState = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
         animationTree.Active = true;
         SwordHitBox.knockback_vector = roll_vector;
+
         stats = GetNode<Node>("/root/PlayerStats");
         stats.Connect("NoHealth", this, "remove");
+
         hurtBox = GetNode<HurtBox>("HurtBox");
         playerHurtSound = (PackedScene)ResourceLoader.Load("res://Player/PlayerHurtSound.tscn");
         blinkAnimationPlayer = GetNode<AnimationPlayer>("BlinkAnimationPlayer");
+        respawnPosition = Position;
     
         var toNextLevel = GetTree().Root.FindNode("ToNextLevel", true, false);
         if(toNextLevel != null)
@@ -65,6 +72,8 @@ public class Player : KinematicBody2D
             else if (state == Movement.ATTACK) attack_state(delta);
         }
         else{
+            velocity = new Vector2(MAX_SPEED, 0);
+            animationTree.Set("parameters/Run/blend_position", Vector2.Right);
             animationState.Travel("Run");
             move();
         }
@@ -129,6 +138,15 @@ public class Player : KinematicBody2D
         state = Movement.MOVE;
     }
 
+    public void _on_EnemyDetectionZone_body_entered(Area2D area){
+        var directionTowardsEnemy = GlobalPosition.DirectionTo(area.GlobalPosition);
+        animationTree.Set("parameters/Idle/blend_position", directionTowardsEnemy);
+        animationTree.Set("parameters/Run/blend_position", directionTowardsEnemy);
+        animationTree.Set("parameters/Attack/blend_position", directionTowardsEnemy);
+        animationTree.Set("parameters/Roll/blend_position", directionTowardsEnemy);
+
+    }
+
     public void _on_HurtBox_area_entered(Area2D area)
     {
         int health = (int)stats.Get("health");
@@ -137,6 +155,7 @@ public class Player : KinematicBody2D
         hurtBox.create_hit_effect();
         var playerHurtSoundInstace = playerHurtSound.Instance();
         GetTree().CurrentScene.AddChild(playerHurtSoundInstace);
+
     }
 
     public void _on_HurtBox_invinciblilityStarted()
@@ -164,12 +183,13 @@ public class Player : KinematicBody2D
     public void _on_ToNextLevel_SetPalyerProcessInput()
     {
         allowUserControl = false;
+        levelCompeleted = true;
     }
 
     public void _on_VisibilityNotifier2D_screen_exited(){
         var scene = GetParent().GetNodeOrNull("../ToNextLevel") as ToNextLevel;
 
-        if(!playerDead && scene.IsInsideTree() != false)
+        if(levelCompeleted && scene.IsInsideTree() != false)
            EmitSignal("TeleportToNextLevel");
         }
 }

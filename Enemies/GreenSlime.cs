@@ -119,7 +119,7 @@ public class GreenSlime : KinematicBody2D
 
     void _on_HurtBox_area_entered(Area2D area)
     {
-        knockback = SwordHitBox.knockback_vector * 75;
+        knockback = SwordHitBox.knockback_vector * 30;
         // animationPlayer.Play("Hurt");
         stats.set_health -= (int)area.Get("damage");
         hurtBox.create_hit_effect();

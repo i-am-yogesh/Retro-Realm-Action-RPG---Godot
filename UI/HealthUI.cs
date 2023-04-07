@@ -42,8 +42,10 @@ public class HealthUI : Control
         playerStats = GetNode<Node>("/root/PlayerStats");
         heartUIEmpty = GetNode<TextureRect>("HeartUIEmpty");
         heartUIFull = GetNode<TextureRect>("HeartUIFull");
+
         this.set_max_hearts = (int)playerStats.Get("max_health");
         this.set_hearts = (int)playerStats.Get("health");
+        
         playerStats.Connect("health_changed", this, "call_set_hearts");
         playerStats.Connect("max_health_changed", this, "call_set_max_hearts");
     }

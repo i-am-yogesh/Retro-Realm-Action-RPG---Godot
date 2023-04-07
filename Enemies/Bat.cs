@@ -91,7 +91,9 @@ public class Bat : KinematicBody2D
     }
 
     void seek_player(){
-        if(playerDetectionZone.can_see_player()) state = Movement.CHASE;
+        if(playerDetectionZone.can_see_player()){
+            state = Movement.CHASE;            
+        }
     }
 
     Movement pick_random_state(Godot.Collections.Array<Movement> state_list){
@@ -103,7 +105,7 @@ public class Bat : KinematicBody2D
 
     void _on_HurtBox_area_entered(Area2D area)
     {
-        knockback = SwordHitBox.knockback_vector * 130;
+        knockback = SwordHitBox.knockback_vector * 50;
         stats.set_health -= (int)area.Get("damage");
         hurtBox.create_hit_effect();
     }

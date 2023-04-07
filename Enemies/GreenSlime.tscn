@@ -98,6 +98,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("SoftCollision/CollisionShape2D:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Death"
@@ -278,6 +290,18 @@ tracks/5/keys = {
 "method": "_on_Hurt_animation_finished"
 } ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("SoftCollision/CollisionShape2D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Idle"
@@ -326,6 +350,18 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("SoftCollision/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -440,11 +476,9 @@ radius = 12.0
 [node name="GreenSlime" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 8 )
-MAX_SPEED = 55
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 9 )
-position = Vector2( 0, 16 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 4
@@ -474,6 +508,7 @@ shape = SubResource( 9 )
 disabled = true
 
 [node name="HitboxPivot" type="Area2D" parent="."]
+visible = false
 collision_layer = 128
 collision_mask = 2
 
@@ -488,7 +523,7 @@ monitoring = false
 
 [node name="CollisionShape2D" parent="HitboxPivot/HitBox" index="0"]
 position = Vector2( 0, -3 )
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 1.4, 1.4 )
 shape = SubResource( 8 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 4 )]
@@ -498,7 +533,6 @@ visible = false
 shape = SubResource( 10 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 shape = SubResource( 11 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Santa's_Tricks.mp3-e51d39caf242d4d755ba252e51365178.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/Santa's_Tricks.mp3"
+dest_files=[ "res://.import/Santa's_Tricks.mp3-e51d39caf242d4d755ba252e51365178.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
