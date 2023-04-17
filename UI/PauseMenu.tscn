@@ -70,14 +70,15 @@ focus_neighbour_bottom = NodePath("../MainMenuButton")
 focus_next = NodePath("../MainMenuButton")
 focus_previous = NodePath("../ResumeButton")
 mouse_default_cursor_shape = 2
-custom_colors/font_color_disabled = Color( 0.392157, 0.376471, 0.376471, 1 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color_focus = Color( 0.568627, 0.231373, 0.231373, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.309804, 0.258824, 0.423529, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 custom_styles/focus = SubResource( 2 )
-disabled = true
-text = "MUSIC OFF"
+toggle_mode = true
+text = "MUSIC ON"
 flat = true
 
 [node name="MainMenuButton" type="Button" parent="."]
@@ -123,5 +124,6 @@ text = "QUIT"
 flat = true
 
 [connection signal="pressed" from="ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="toggled" from="SoundButton" to="." method="_on_SoundButton_toggled"]
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]

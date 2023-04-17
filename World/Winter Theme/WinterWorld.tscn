@@ -19,7 +19,7 @@
 [ext_resource path="res://UI/ToNextLevel.tscn" type="PackedScene" id=17]
 [ext_resource path="res://World/Winter Theme/SnowCliff.png" type="Texture" id=18]
 [ext_resource path="res://Enemies/GreenSlime.tscn" type="PackedScene" id=19]
-[ext_resource path="res://UI/BackgroundMusic.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Music and Sounds/BackgroundMusic.tscn" type="PackedScene" id=20]
 [ext_resource path="res://UI/PauseMenu.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Music and Sounds/Santa's_Tricks.mp3" type="AudioStream" id=22]
 

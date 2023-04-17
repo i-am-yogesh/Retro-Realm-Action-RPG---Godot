@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lovely-but-damaged.mp3-be5fd953f45c603a8f8b7239093e6d51.mp3str"
+
+[deps]
+
+source_file="res://Music and Sounds/lovely-but-damaged.mp3"
+dest_files=[ "res://.import/lovely-but-damaged.mp3-be5fd953f45c603a8f8b7239093e6d51.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

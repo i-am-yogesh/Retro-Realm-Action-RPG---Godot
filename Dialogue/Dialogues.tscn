@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/Font/PixelFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Dialogue/Dialogues.gd" type="Script" id=2]
+[ext_resource path="res://Dialogue/dialogue_box.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="Dialogues" type="CanvasLayer"]
+script = ExtResource( 2 )
+d_file = "res://Dialogue/JSON/player_dialogues_monologue_one.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = 7.0
+margin_top = 104.0
+margin_right = 314.0
+margin_bottom = 175.0
+texture = ExtResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 7
+patch_margin_bottom = 2
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 31.0
+margin_top = 5.0
+margin_right = 134.0
+margin_bottom = 23.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Name"
+
+[node name="Chat" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 25.0
+margin_top = 22.0
+margin_right = 367.0
+margin_bottom = 76.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/default_color = Color( 0.294118, 0, 0.176471, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "When I opened my eyes, I was in a completely different place, nothing like I had ever seen before."
+
+[node name="Sprite" type="Sprite" parent="NinePatchRect"]
+position = Vector2( 19, 12 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

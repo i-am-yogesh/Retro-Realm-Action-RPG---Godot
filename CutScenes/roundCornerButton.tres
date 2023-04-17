@@ -1,0 +1,43 @@
+[gd_resource type="Theme" load_steps=6 format=2]
+
+[ext_resource path="res://UI/Font/PixelFont.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=6]
+size = 14
+extra_spacing_top = 3
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.878906, 0.554953, 0.504684, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.560784, 0.333333, 0.305882, 0.941176 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.309804, 0.547917, 0.572549, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 6 )
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = SubResource( 7 )
+Button/styles/normal = SubResource( 4 )
+Button/styles/pressed = SubResource( 8 )

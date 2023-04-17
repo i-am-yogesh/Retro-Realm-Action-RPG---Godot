@@ -50,4 +50,15 @@ public class PauseMenu : CanvasLayer
     public void _on_QuitButton_pressed(){
         GetTree().Quit();
     }
+
+    void _on_SoundButton_toggled(bool active){
+        if(active){
+            AudioServer.SetBusMute(AudioServer.GetBusIndex("ToggleBGM"), true);
+            soundButton.Text = "MUSIC OFF";
+        }
+        else{
+            AudioServer.SetBusMute(AudioServer.GetBusIndex("ToggleBGM"), false);
+            soundButton.Text = "MUSIC ON";
+        }
+    }
 }

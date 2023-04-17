@@ -23,7 +23,7 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
-FIRST_LEVEL = "res://world.tscn"
+FIRST_LEVEL = "res://CutScenes/CutScenesOne.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 1850.0
@@ -134,7 +134,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.309804, 0.258824, 0.423529, 1 )
 custom_fonts/font = SubResource( 1 )
 custom_styles/focus = SubResource( 4 )
-disabled = true
+toggle_mode = true
 text = "MUSIC ON"
 flat = true
 
@@ -148,3 +148,4 @@ stream = ExtResource( 5 )
 [connection signal="pressed" from="HelpButton" to="." method="_on_HelpButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="toggled" from="MusicButton" to="." method="_on_MusicButton_toggled"]

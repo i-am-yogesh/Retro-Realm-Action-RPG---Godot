@@ -61,6 +61,8 @@ public class Player : KinematicBody2D
         var toNextLevel = GetTree().Root.FindNode("ToNextLevel", true, false);
         if(toNextLevel != null)
             Connect("TeleportToNextLevel", toNextLevel, "_on_Player_TeleportToNextLevel");
+
+        
     }
 
     public override void _PhysicsProcess(float delta)

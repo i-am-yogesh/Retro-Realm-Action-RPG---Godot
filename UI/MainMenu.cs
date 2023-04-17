@@ -10,14 +10,17 @@ public class MainMenu : Control
     Button creditsButton;
     Button helpButton;
     Button quitButton;
+    Button musicButton;
     AudioStreamPlayer2D menuSelect;
-    PackedScene sceneTransition;    
+    PackedScene sceneTransition;
+
     public override void _Ready()
     {
         startButton = GetNode<Button>("StartButton");
         creditsButton = GetNode<Button>("CreditsButton");
         helpButton = GetNode<Button>("HelpButton");
         quitButton = GetNode<Button>("QuitButton");
+        musicButton = GetNode<Button>("MusicButton");
 
         startButton.GrabFocus();
         menuSelect = GetNode<AudioStreamPlayer2D>("MenuSelect");
@@ -52,6 +55,17 @@ public class MainMenu : Control
     public void _on_CreditsButton_pressed(){
         menuSelect.Play();
         GetTree().ChangeScene("res://UI/Credits.tscn");
+    }
+
+    void _on_MusicButton_toggled(bool active){
+        if(active){
+            AudioServer.SetBusMute(AudioServer.GetBusIndex("ToggleBGM"), true);
+            musicButton.Text = "MUSIC OFF";
+        }
+        else{
+            AudioServer.SetBusMute(AudioServer.GetBusIndex("ToggleBGM"), false);
+            musicButton.Text = "MUSIC ON";
+        }
     }
 
     public override void _Process(float delta)
