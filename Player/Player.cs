@@ -35,6 +35,10 @@ public class Player : KinematicBody2D
     public void remove()
     {
         Hide();
+        var basicTransitionNode = GetTree().Root.GetNode<CanvasLayer>("world/BasicTransition");
+        if(basicTransitionNode != null){
+            basicTransitionNode.GetNode<AnimationPlayer>("AnimationPlayer").Play("Transition");
+        }
         Position = respawnPosition;
         int health = (int)stats.Get("health");
         stats.Set("set_health", (health + 2));

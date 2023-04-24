@@ -307,7 +307,6 @@ margin_bottom = 200.0
 custom_styles/panel = SubResource( 3 )
 
 [node name="Dialogues" parent="." instance=ExtResource( 3 )]
-d_file = "res://Dialogue/JSON/player_dialogues_monologue_one.json"
 
 [node name="SkipButton" type="Button" parent="."]
 margin_left = 257.0

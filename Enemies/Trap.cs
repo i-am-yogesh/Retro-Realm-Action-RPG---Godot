@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 public class Trap : Sprite
 {
     public async void _on_HitBox_area_entered(Area2D body){
-        GD.Print("conn");
         GetNode<AnimationPlayer>("AnimationPlayer").Play("Triggered");
         
         await Task.Delay(200);

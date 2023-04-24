@@ -473,7 +473,7 @@ radius = 80.0
 [sub_resource type="CircleShape2D" id=11]
 radius = 12.0
 
-[node name="GreenSlime" type="KinematicBody2D"]
+[node name="GreenSlime" type="KinematicBody2D" groups=["minimap_objects"]]
 collision_layer = 16
 script = ExtResource( 8 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://World/bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://Enemies/GreenSlime.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Music and Sounds/BackgroundMusic.tscn" type="PackedScene" id=16]
 [ext_resource path="res://UI/PauseMenu.tscn" type="PackedScene" id=17]
+[ext_resource path="res://world.gd" type="Script" id=18]
+[ext_resource path="res://UI/BasicTransition.tscn" type="PackedScene" id=20]
+[ext_resource path="res://UI/player_marker_sprite.png" type="Texture" id=21]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -492,8 +495,46 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 0/z_index = 0
 
+[sub_resource type="AtlasTexture" id=105]
+atlas = ExtResource( 21 )
+region = Rect2( 0, 0, 100, 180 )
+
+[sub_resource type="AtlasTexture" id=106]
+atlas = ExtResource( 21 )
+region = Rect2( 100, 0, 100, 180 )
+
+[sub_resource type="AtlasTexture" id=107]
+atlas = ExtResource( 21 )
+region = Rect2( 200, 0, 100, 180 )
+
+[sub_resource type="AtlasTexture" id=108]
+atlas = ExtResource( 21 )
+region = Rect2( 300, 0, 100, 180 )
+
+[sub_resource type="AtlasTexture" id=54]
+atlas = ExtResource( 21 )
+region = Rect2( 400, 0, 100, 180 )
+
+[sub_resource type="AtlasTexture" id=109]
+atlas = ExtResource( 21 )
+region = Rect2( 500, 0, 100, 180 )
+
+[sub_resource type="AtlasTexture" id=110]
+atlas = ExtResource( 21 )
+region = Rect2( 600, 0, 100, 180 )
+
+[sub_resource type="SpriteFrames" id=57]
+animations = [ {
+"frames": [ SubResource( 105 ), SubResource( 106 ), SubResource( 107 ), SubResource( 108 ), SubResource( 54 ), SubResource( 109 ), SubResource( 110 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="world" type="Node2D"]
 position = Vector2( 47, -1 )
+script = ExtResource( 18 )
+ready_transition = true
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( -200, -350 )
@@ -1098,6 +1139,17 @@ position = Vector2( 1, 0 )
 volume_db = -8.0
 
 [node name="PauseMenu" parent="." instance=ExtResource( 17 )]
+visible = false
+
+[node name="PlayerMarker" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 32, 20 )
+scale = Vector2( 0.3, 0.25 )
+frames = SubResource( 57 )
+frame = 1
+playing = true
+
+[node name="BasicTransition" parent="." instance=ExtResource( 20 )]
 visible = false
 
 [editable path="Camera2D"]
